@@ -1,0 +1,246 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+    --font-family:  sans-serif;
+}
+body {
+	font-family:  sans-serif;
+}
+.container {
+	width: 100%;
+	height: 100%;
+}
+
+.wrapper {
+	position: fixed;
+	align-items: flex-start;
+	width: 25%;
+	height: 100%;
+	background-color: transparent;
+  	right: 0;
+}
+main {
+	position: fixed;
+	width: 75%;
+	height: 100%;
+	background-color: transparent;
+	overflow: auto;
+	padding: 40px;
+}
+.button {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	padding: 10px;
+	letter-spacing: 2px;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	color: #fff;
+	background-color: #00000080;
+	cursor: pointer;
+	-webkit-transition: .35s;
+	transition: .35s;
+	height: 35px;
+    margin: 5px;
+	overflow: hidden;
+	line-height: 15px;
+    display: inline-block;
+}
+.wrap {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	padding: 15px 25px;
+	letter-spacing: 2px;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	color: #fff;
+	background-color: #00000080;
+	cursor: pointer;
+	-webkit-transition: .35s;
+	transition: .35s;
+    margin: 5px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align:center;
+}
+
+input {
+    display: none;
+}
+
+label {
+    display: flex;
+    width: 100%;
+    height: 30px;
+    cursor: pointer;
+    /*border: 2px solid #ffff;*/
+    user-select: none;
+
+ 
+}
+
+label div:first-child {
+    width: 100%;
+    line-height: 45px;
+    margin-left: 10px;
+    font-size: 1.2em;
+}
+
+.cross{
+    margin-right:15px;
+    margin-top:3px;
+}
+
+.cross:before,.cross:after {
+    content: '';
+    border-top: 2px solid #ffff;
+    width: 15px;
+    display: block;
+    margin-top: 18px;
+    transition: 0.3s;
+}
+
+.cross:after {
+    transform: rotate(90deg);
+    margin-top: -2px;
+}
+
+.content {
+    box-sizing: border-box;
+    font-size: 0.9em;
+    margin: 10px 10px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height, .5s;
+}
+
+input:checked ~ .content {
+    max-height: 400px;
+    transition: max-height, 1s;
+}
+
+input:checked ~ label .cross:before {
+    transform: rotate(180deg);
+}
+
+input:checked ~ label .cross:after {
+    transform: rotate(0deg);
+}
+
+.questions{
+    margin-top:20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height, .5s;
+}
+
+.questions label{
+    border:none;
+    box-shadow: none;
+    margin:0;
+    line-height: 5px;
+}
+
+input:checked ~ .questions {
+    max-height: 400px;
+    border-bottom:2px solid #3E474F;
+    transition: 1s;
+}
+
+/*----------tool-tip------------*/
+
+.tip {
+    color: #feac37;
+    cursor: help;
+    position: relative;
+    overflow: visible;
+    font-family: --var(--font-family);
+    font-size: 1 em;
+}
+
+.tip:before,
+.tip:after {
+    position: absolute;
+    opacity: 0;
+    z-index: -100;    
+    transform: translateY(-30%);
+    transition: .4s;
+ 
+}
+
+.tip:before {
+    content: '';
+    border-style: solid;
+    border-width: 0.8em 0.5em 0 0.5em;
+    border-color: #3E474F transparent transparent transparent;
+    transform: translateY(-200%);
+    bottom:90%;
+    left:50%;
+
+}
+
+.tip:after {
+    content: attr(data-tip);
+    background: #3E474F;
+    color: white;
+    width: 150px;
+    padding: 10px;
+    font-size: 0.8em;
+    bottom: 150%;
+    left: -50%;
+
+}
+
+.tip:hover:before,
+.tip:hover:after {
+    opacity: 1;
+    z-index: 10000;
+    transform: scaleY(1);
+}
+@media (max-width: 900px) {
+.wrap {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 12px;
+	font-weight: 700;
+	padding: 2px 15px;
+	letter-spacing: 2px;
+	border: 2px solid #fff;
+	border-radius: 5px;
+	color: #fff;
+	background-color: #00000080;
+	cursor: pointer;
+	-webkit-transition: .35s;
+	transition: .35s;
+    margin: 3px;
+}
+  
+.wrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 10px;
+    height: 50vh;
+
+}
+main {
+   position: absolute;
+	width: 100%;
+	height: 70vh;
+	overflow: auto;
+	padding: 40px;
+}
+
+    .container {
+    width: 100%;
+    height: 100%;
+        
+    }
+
+	.tabs {
+		width: 100%;
+	}
+}
