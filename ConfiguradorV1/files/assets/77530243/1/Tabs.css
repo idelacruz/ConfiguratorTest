@@ -4,12 +4,17 @@
 	box-sizing: border-box;
     --font-family:  sans-serif;
 }
+fill-mode-NONE {
+margin-top: 0px;
+    
+}
 body {
 	font-family:  sans-serif;
 }
 .container {
 	width: 100%;
 	height: 100%;
+    background-color: #fff;
 }
 
 .wrapper {
@@ -203,6 +208,9 @@ input:checked ~ .questions {
     transform: scaleY(1);
 }
 @media (max-width: 900px) {
+
+
+
 .wrap {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 12px;
@@ -220,9 +228,10 @@ input:checked ~ .questions {
 }
   
 .wrapper {
+    overflow: scroll;
     position: absolute;
     width: 100%;
-    bottom: 10px;
+    bottom: 0px;
     height: 50vh;
 
 }
